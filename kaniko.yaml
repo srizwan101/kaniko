@@ -10,15 +10,11 @@ spec:
         image: gcr.io/kaniko-project/executor:latest
         args: ["--dockerfile=./Dockerfile",
                "--context=git://github.com/srizwan101/kaniko.git#refs/heads/main",
-               "--destination=srizwan101/ownnginx:v1"]
+               "--destination=localhost:5000/ownnginx:v1"]
         volumeMounts:
-        - name: kaniko-secret
+        - name: kaniko-secret3
           mountPath: "/kaniko/.docker"
       restartPolicy: Never
       volumes:
-      - name: kaniko-secret
-        secret:
-          secretName: regcred
-          items:
-          - key: .dockerconfigjson
-            path: config.json
+      - name: kaniko-secret3
+        
