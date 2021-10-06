@@ -8,7 +8,7 @@ spec:
       containers:
       - name: kaniko
         image: gcr.io/kaniko-project/executor:latest
-        args: ["--dockerfile=Dockerfile",
+        args: ["--dockerfile=./Dockerfile",
                "--context=git://github.com/srizwan101/kaniko.git#refs/heads/main",
                "--destination=srizwan101/ownnginx:v1"]
         volumeMounts:
